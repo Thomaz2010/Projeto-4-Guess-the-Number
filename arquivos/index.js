@@ -6,6 +6,14 @@ let attemps = 0
 let maxguesses = 10
 
 
+// função para habilitar o botão New Game 
+function newGame() {
+  window.location.reload('newGameButton')
+
+
+}
+  
+
 
 
 //Gerando um número Randomico
@@ -26,6 +34,9 @@ function compareNumbers () {
    // Adicionando if / else
   // Fazendo a logica de comparação
 
+  if( userNumber < 101) {// condição para numeros acima do estipulado para jogar , jogo trabalha ente 0 a 100
+
+    
   if(  attemps < maxguesses ) {// condição de numero de tentativas 
 
 
@@ -66,7 +77,13 @@ function compareNumbers () {
 
         
 
+  } 
+
+  } else {
+    document.getElementById('textOutput').innerHTML = ' Error *Número acima do permitido* - Tente novamente'
+
   }
+
 
 
 
