@@ -2,6 +2,8 @@
 
 let computerNumber
 let userNumbers =  []
+let attemps = 0
+let maxguesses = 10
 
 
 
@@ -24,22 +26,48 @@ function compareNumbers () {
    // Adicionando if / else
   // Fazendo a logica de comparação
 
+  if(  attemps < maxguesses ) {// condição de numero de tentativas 
+
+
+    
     if( userNumber > computerNumber) {
         document.getElementById('textOutput').innerHTML = 'Number is too Hight'
+        document.getElementById('inputBox').value = ' ' // esvaziando um campo 
+        attemps++// incremento para variavel contadora 
+        document.getElementById('attempts').innerHTML = attemps// inserindo resultado no html
 
 
     }
 
     else if( userNumber < computerNumber)  {
-        document.getElementById('textOutput').innerHTML = ' Number is too  Low '
+        document.getElementById('textOutput').innerHTML = ' Number is too  Low '//inserindo resultado no html
+        document.getElementById('inputBox').value = ' ' // esvaziando um campo
+        attemps++ 
+        document.getElementById('attempts').innerHTML = attemps//inserindo resultado no html
+
 
 
     }
 
     else {
         document.getElementById('textOutput').innerHTML = 'HALLLL ****Congratulations ****'
+        attemps++
+        document.getElementById('attempts').innerHTML = attemps//inserindo resultado no html
+        document.getElementById('inputBox').setAttribute('Readonly','Readonly')// desabilitando o campo após tentativas
+
+        
 
     }
+
+  } else {
+
+    document.getElementById('textOutput').innerHTML = ' You Lose!!!!!  The computer number was' + computerNumber///inserindo resultado no html
+    document.getElementById('inputBox').setAttribute('Readonly','Readonly')//desabilitando o campo após tentativas
+
+        
+
+  }
+
 
 
 }
